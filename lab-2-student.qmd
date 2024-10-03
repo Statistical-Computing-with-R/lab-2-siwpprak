@@ -5,6 +5,11 @@ format: html
 editor: source
 embed-resources: true
 code-tools: true
+execute:
+  echo: true 
+  error: true
+  message: false
+  warning: false
 ---
 
 # Part 1: GitHub Workflow
@@ -62,7 +67,8 @@ In the code chunk below, load in the packages necessary for your analysis. You s
 
 ```{r}
 #| label: setup
-
+library(tidyverse)
+install.packages("here")
 ```
 
 # Data Context
@@ -101,10 +107,11 @@ represent:
 
 ```{r}
 #| label: load-data
-
+read_csv(here::here("data", "surveys.csv"))
 ```
 
 **2. What are the dimensions (# of rows and columns) of these data?**
+15 columns and 30,463 rows
 
 <!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  -->
 
