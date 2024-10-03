@@ -1,6 +1,6 @@
 ---
 title: "Lab 2: Exploring Rodents with `ggplot2`"
-author: "Your name here!"
+author: "Phillip Prak!"
 format: html
 editor: source
 embed-resources: true
