@@ -9,6 +9,7 @@ theme: Morph
 fontcolor: black
 editor: source
 embed-resources: true
+code-tools: true
 execute:
   echo: true 
   error: true
