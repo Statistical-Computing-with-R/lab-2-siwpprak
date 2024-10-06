@@ -209,8 +209,9 @@ ggplot(data = surveys,
   geom_point(alpha = 0.2) + 
   facet_wrap(~species) + 
   labs(x = "weight",
-       y = "hindfoot_length", 
+       y = "", 
        color = "",
+       subtitle = "hindfoot_length",
        title = "Rodents Weight and foot length Scatterplot")
 
 ```
