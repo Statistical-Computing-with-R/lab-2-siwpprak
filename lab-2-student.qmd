@@ -73,7 +73,6 @@ In the code chunk below, load in the packages necessary for your analysis. You s
 ```{r}
 #| label: setup
 library(tidyverse)
-install.packages("here")
 
 ```
 
