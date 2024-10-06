@@ -1,10 +1,17 @@
 ---
 title: "Challenge 2: Spicing things up with ggplot2"
-author: "Add your name!"
+author: "Phillip Prak!"
 format: html
+code-fold: true	
 editor: source
 embed-resources: true
 code-tools: true
+self-contained: true
+execute:
+  echo: true
+  error: true
+  warning: false
+  message: false
 ---
 
 For this week's Challenge, you will have three different options to explore.
@@ -23,7 +30,27 @@ you would like to include, feel free to toss those in the YAML, too!
 Next, create a setup code chunk to load the packages and read in the
 `surveys.csv` data file exactly how you did in Lab 2.
 
+```{r}
+#| label: setup
+library(tidyverse)
+surveys = read_csv(here::here("data", "surveys.csv"))
+surveys
+```
+
+
 Finally, create another code chunk and paste in your code from Question 14 or Question 15 in Lab 2 -- we will be modifying the box plot of weights by species!
+
+```{r}
+#| label: boxplot
+ggplot(data = surveys, 
+       mapping = aes(x = species, y = weight)) +
+    geom_boxplot( outliers = FALSE) +
+  geom_jitter(alpha = 0.3, color = "steelblue") + 
+  labs(x = "species", y = "weight") + 
+  theme(axis.text.x = element_text(angle = 45))
+#https://www.datanovia.com/en/blog/ggplot-axis-ticks-set-and-rotate-text-labels/
+```
+
 
 # Medium: Ridge Plots
 
@@ -37,6 +64,20 @@ make use of the `ggridges` package to create side-by-side density (ridge) plots.
 
 > **For this challenge you are to change your boxplots to ridge plots. You will need to install the `ggridges` package and explore the `geom_density_ridges()` function.**
 
+```{r}
+library(ggridges)
+library(ggplot2)
+```
+
+```{r}
+#| label: Ridge Plots
+ggplot(data = surveys, 
+      aes(x = weight, y = species, color = species)) +
+  geom_density_ridges()
+  
+#?ggridges
+
+```
 # Spicy: Exploring Color Themes
 
 The built-in `ggplot()` color scheme may not include the colors you were looking
